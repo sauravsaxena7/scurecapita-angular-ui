@@ -1,8 +1,23 @@
 <app-header *ngIf="showHead"></app-header>
 
-<main class="container">
-  <router-outlet></router-outlet>
-</main>
-<hr class="featurtte-divider mt-3">
-<app-footer></app-footer>
+
+<mat-sidenav-container *ngIf="showHead">
+  <!-- mode="side,over,push" -->
+  <mat-sidenav  opened mode="side" [style.width]="sidenavWidth()">
+    <app-custom-sidenav [collapsed]="collapsed()" />
+  </mat-sidenav>
+  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+    <main class="container">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- for on auth page -->
+
+<router-outlet *ngIf="!showHead"></router-outlet>
+
+
+<!-- <app-footer></app-footer> -->
 

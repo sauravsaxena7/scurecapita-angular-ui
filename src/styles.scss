@@ -109,6 +109,73 @@ body{
   &.color-scheme-dark{
     background-color: #3a3a3a;
     color: #f2f2f2;
+    .main-card{
+      background-color: #393838;
+    }
+    mat-sidenav{
+      background-color: #393838;
+    }
+    mat-sidenav-content{
+      background-color: #3a3a3a;
+    }
+    
   }
 
+  &.color-scheme-light{
+    background-color: #f4f3ef;
+    .main-card{
+      background-color: #f5f5f5;
+    }
+    mat-sidenav{
+      background-color: #f5f5f5;
+    }
+    mat-sidenav-content{
+      background-color: #f4f3ef;
+    }
+    
+  }
+
+}
+
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  margin-top: 10px;
+}
+.main-card {
+  width: 500px;
+  align-items: center;
+}
+
+.main-card-content {
+  width: 450px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+.button-big-bg {
+  width: 100%;
+  // color: white !important;
+  // background-color: #F84E45 !important;
+}
+mat-label {
+  color: #878484;
+}
+
+.footer-scss {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: red;
+    cursor: pointer;
+    
+  }
+  span:hover{
+    text-decoration: underline;
+  }
 }

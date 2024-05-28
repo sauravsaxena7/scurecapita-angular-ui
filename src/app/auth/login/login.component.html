@@ -1,1 +1,73 @@
-<p>login works!</p>
+<div class="main-div">
+    <mat-card class="main-card">
+      <mat-card-header>
+        <div><app-codesake-logo></app-codesake-logo></div>
+      </mat-card-header>
+      <div><mat-card-subtitle>Welcome</mat-card-subtitle></div>
+      <div>
+        <mat-card-subtitle>Please Sign In To Continue.</mat-card-subtitle>
+      </div>
+  
+      <div>
+        <mat-card-content class="main-card-content">
+          <div>
+            <form>
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter a valid email." />
+                <mat-icon matSuffix class="material-icons-outlined"
+                  >email</mat-icon
+                >
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                  placeholder="Enter new password."
+                  matInput
+                  [type]="hide ? 'password' : 'text'"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="clickEvent($event)"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+  
+             
+  
+              <button
+                type="button"
+                mat-raised-button
+                color="primary"
+                class="button-big-bg"
+              >
+                <!-- {{btn_loading ? ' '<mat-spinner strokeWidth="2" diameter="25"></mat-spinner>'':"Continue"}} -->
+                <ng-container *ngIf="btn_loading; else continueTemplate">
+                  <mat-spinner strokeWidth="2" diameter="25"></mat-spinner>
+                </ng-container>
+                <ng-template #continueTemplate> Continue </ng-template>
+              </button>
+            </form>
+          </div>
+  
+          <div style="margin-top: 10px;">
+            <app-mat-rule-with-text></app-mat-rule-with-text>
+          </div>
+  
+          <div class="footer-scss">
+            <mat-card-subtitle>Create New One ? <span (click)="onClickSignUpText()">Sign Up</span> </mat-card-subtitle>
+          </div>
+        </mat-card-content>
+      
+      </div>
+    </mat-card>
+  </div>
+  

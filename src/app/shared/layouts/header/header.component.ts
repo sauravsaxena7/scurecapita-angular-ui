@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 import { AppComponent } from '../../../app.component';
 import { ColorSchemeService } from '../../services/color-scheme.service';
@@ -35,7 +35,8 @@ export class HeaderComponent {
 
   isDark: boolean = false;
 
-  
+  collapsed=this.appComponent.collapsed;
+  sidenavWidth=this.appComponent.sidenavWidth;
 
   setTheme() {
     // this.isDark=d;

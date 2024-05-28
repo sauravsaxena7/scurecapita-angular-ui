@@ -9,8 +9,8 @@ import ROUTES_CONSTANT from './shared/constant/RouteConstant';
 export const routes: Routes = [
 
 
-    {path:"",redirectTo:"/home",pathMatch:"full"},
-    {path:"home",component:HomeComponent},
+    {path:"",redirectTo:"/"+ROUTES_CONSTANT.HOME,pathMatch:"full"},
+    {path:ROUTES_CONSTANT.HOME,component:HomeComponent},
     {path:"me",component:ProfileComponent},
     {path:ROUTES_CONSTANT.SIGN_IN,component:LoginComponent},
     {path:ROUTES_CONSTANT.SIGN_UP,component:SignUpComponent},

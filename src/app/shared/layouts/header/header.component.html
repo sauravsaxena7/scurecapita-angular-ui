@@ -1,5 +1,5 @@
 <mat-toolbar color="light-nav" class="mat-elevation-z3">
-  <button mat-icon-button>
+  <button mat-icon-button  (click)="collapsed.set(!collapsed())">
     <mat-icon>menu</mat-icon>
   </button>
 
@@ -26,3 +26,5 @@
     <button mat-menu-item>Logout</button>
   </mat-menu>
 </mat-toolbar>
+
+
