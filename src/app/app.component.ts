@@ -1,10 +1,11 @@
 import { Component, HostBinding, Renderer2 } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/layouts/header/header.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MaterialModule } from './material/material.module';
 import { FooterComponent } from './shared/layouts/footer/footer.component';
 import { ColorSchemeService } from './shared/services/color-scheme.service';
+import ROUTES_CONSTANT from './shared/constant/RouteConstant';
 
 @Component({
   selector: 'app-root',
@@ -15,39 +16,35 @@ import { ColorSchemeService } from './shared/services/color-scheme.service';
 })
 export class AppComponent {
   title = 'scurecapita-ui';
-  @HostBinding('class') class: string = '';
-  isDark: boolean = false;
 
+  showHead: boolean = false;
+  currentTheme: string = '';
 
-
-
-  constructor(
-    private snackbar: MatSnackBar,
-    private renderer: Renderer2,
-    private colorSchemeService: ColorSchemeService
-  ) {
-    this.colorSchemeService.load();
+  constructor(private router: Router,public colorSchemeService: ColorSchemeService) {
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/'+ROUTES_CONSTANT.SIGN_UP || event['url'] == '/'+ROUTES_CONSTANT.SIGN_IN) {
+          this.showHead = false;
+        } else {
+          // console.log("NU")
+          this.showHead = true;
+        }
+      }
+    });
   }
 
   ngOnInit(): void {
-    this.isDark = localStorage.getItem('theme') == 'dark';
-    this.setTheme(this.isDark);
-  }
-
-  setTheme(isDark: boolean) {
-    if (isDark) {
-      //this.class='dark-theme'
-      //this.snackbar.open('Dark theme apply','OK');
-      this.renderer.addClass(document.body, 'dark-theme');
-      localStorage.setItem('theme', 'dark');
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      // dark mode
+      console.log("dark mode")
+      this.currentTheme = 'dark';
+      this.colorSchemeService.update('light');
     } else {
-      this.class = '';
-      //this.snackbar.open('light  theme apply','OK');
-      //this.renderer.removeClass(document.body, 'dark-theme');
-      localStorage.setItem('theme', 'light');
-      this.snackbar.open('Light theme apply', 'OK');
+      this.currentTheme = 'light';
+      this.colorSchemeService.update('light');
     }
   }
-
-  
 }

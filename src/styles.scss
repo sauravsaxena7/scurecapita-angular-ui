@@ -19,12 +19,30 @@ body {
 *:after {
   box-sizing: inherit;
 }
+.mat-mdc-progress-spinner { --mdc-circular-progress-active-indicator-color: white; }
+
+/* Change the border focused color */
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__trailing {
+  border-color: #878484 !important;
+}
+
+
+
 
 // $inside-primary: mat-palette($mat-light-blue);
 // $inside-accent: mat-palette($mat-light-blue);
 // $inside-warn: mat-palette($mat-red);
 // $inside-theme-dark: mat-dark-theme($inside-primary, $inside-accent, $inside-warn);
 // $inside-theme-light: mat-light-theme($inside-primary, $inside-accent, $inside-warn);
+
+$custom-primary: mat.define-palette(mat.$red-palette, 500, 100, 900);
+
+
 
 $youtube-navbar-sidebar-primary-light-theme: mat.define-palette(mat.$indigo-palette);
 
@@ -34,7 +52,8 @@ $light-accent: mat.define-palette(mat.$pink-palette);
 $light-theme: mat.define-light-theme(
   (
     color: (
-      primary: $light-primary,
+      primary: $custom-primary,
+      //primary:$bv-palette-primary,
       accent: $light-accent,
       light-nav:$youtube-navbar-sidebar-primary-light-theme
     ),
@@ -47,7 +66,7 @@ $dark-accent: mat.define-palette(mat.$blue-gray-palette);
 $dark-theme: mat.define-dark-theme(
   (
     color: (
-      primary: $dark-primary,
+      primary: $custom-primary,
       accent: $dark-accent,
     ),
   )
