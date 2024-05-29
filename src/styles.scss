@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -118,6 +119,11 @@ body{
     mat-sidenav-content{
       background-color: #3a3a3a;
     }
+    .form-control{
+      
+      background-color: #3a3a3a;
+    }
+    
     
   }
 
@@ -131,6 +137,9 @@ body{
     }
     mat-sidenav-content{
       background-color: #f4f3ef;
+    }
+    .form-control{
+      
     }
     
   }

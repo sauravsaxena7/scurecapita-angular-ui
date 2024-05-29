@@ -10,4 +10,5 @@ import { MaterialModule } from '../../material/material.module';
 })
 export class ProfileComponent {
 
+  btn_loading:boolean=false;
 }
