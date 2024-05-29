@@ -1,6 +1,7 @@
 import { Component, Input, computed, signal } from '@angular/core';
 import { MaterialModule } from '../../material/material.module';
 import { RouterModule } from '@angular/router';
+import ROUTES_CONSTANT from '../constant/RouteConstant';
 
 
 export type MenuItem = {
@@ -24,6 +25,16 @@ export class CustomSidenavComponent {
     this.signalNavCollapsed.set(val);
   }
   menuItems = signal<MenuItem[]>([
+    {
+      icon: 'home',
+      label: 'Home',
+      route: ROUTES_CONSTANT.HOME,
+    },
+    {
+      icon: 'account_circle',
+      label: 'Profile',
+      route: ROUTES_CONSTANT.PROFILE,
+    },
     {
       icon: 'dashboard',
       label: 'Dashboard',
