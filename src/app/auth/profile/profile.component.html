@@ -13,6 +13,23 @@
         </div>
       </mat-card-content>
     </mat-card>
+
+    <mat-card class="profile-card">
+      <div class="profile-setting">
+        <ul class="list-unstyled team-members">
+          <li *ngFor="let item of menuItems(); index as i" [ngClass]="i==account_setting_active ? 'account-setting-active':''">
+            <div class="row">
+              <div class="col-md-1 col-1">
+               <mat-card-subtitle  > <i class={{item.icon}} (click)="setActiveAccountSetting(i)"></i></mat-card-subtitle>
+              </div>
+              <div class="col-md-11 col-11">
+                <mat-card-subtitle><p (click)="setActiveAccountSetting(i)">{{item.label}}</p></mat-card-subtitle>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </mat-card>
   </div>
 
   <div class="col-lg-8 col-md-6 col-sm-12">

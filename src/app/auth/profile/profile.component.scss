@@ -52,7 +52,7 @@
   }
 
   .form-control {
-    border: 1px solid #9a9a9a;
+    //border: 1px solid #9a9a9a;
     border-radius: 4px;
     line-height: normal;
     color: #9a9a9a;
@@ -90,5 +90,36 @@
     justify-content: center;
     align-items: center;
     width: 200px;
+  }
+
+  .list-unstyled,
+  .list-inline {
+    padding-left: 0;
+    list-style: none;
+  }
+  ul{
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .profile-setting{
+    margin: 15px;
+    mat-card-subtitle {
+      padding: 10px;
+      i{
+        cursor: pointer;
+        font-size: 24px !important;
+      }
+      p{
+        margin-left: 10px !important;
+        cursor: pointer;
+      }
+      
+    }
+  }
+  .account-setting-active{
+    
+    i,p{
+      color: #F84E45 !important;
+    }
   }
 }

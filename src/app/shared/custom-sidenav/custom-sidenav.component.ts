@@ -2,13 +2,9 @@ import { Component, Input, computed, signal } from '@angular/core';
 import { MaterialModule } from '../../material/material.module';
 import { RouterModule } from '@angular/router';
 import ROUTES_CONSTANT from '../constant/RouteConstant';
+import { MenuItem } from '../utils/Utils';
 
 
-export type MenuItem = {
-  icon: string;
-  label: string;
-  route?: string;
-};
 
 
 @Component({
