@@ -10,6 +10,26 @@
         </div>
         <div class="prfile-description">
           <mat-card-subtitle>Saurav Saxena</mat-card-subtitle>
+          <mat-card-title>Software Engineer</mat-card-title>
+          <div class="flex-section" style="align-items: center;justify-content: center;">
+            <div class="followers-following">
+              <mat-card-subtitle><i class="icon ion-md-star"></i></mat-card-subtitle>
+            </div>
+            <div class="followers-following">
+              <mat-card-subtitle>500 Starred</mat-card-subtitle>
+            </div>
+          </div>
+          <div class="flex-section" style="align-items: center;justify-content: center;">
+            <div class="followers-following">
+              <mat-card-subtitle>400 Followers</mat-card-subtitle>
+            </div>
+            <div class="followers-following">
+              <mat-card-subtitle>.</mat-card-subtitle>
+            </div>
+            <div class="followers-following">
+              <mat-card-subtitle>500 Following</mat-card-subtitle>
+            </div>
+          </div>
         </div>
       </mat-card-content>
     </mat-card>
@@ -17,13 +37,27 @@
     <mat-card class="profile-card">
       <div class="profile-setting">
         <ul class="list-unstyled team-members">
-          <li *ngFor="let item of menuItems(); index as i" [ngClass]="i==account_setting_active ? 'account-setting-active':''">
+          <li
+            *ngFor="let item of menuItems(); index as i"
+            [ngClass]="
+              i == account_setting_active ? 'account-setting-active' : ''
+            "
+          >
             <div class="row">
               <div class="col-md-1 col-1">
-               <mat-card-subtitle  > <i class={{item.icon}} (click)="setActiveAccountSetting(i)"></i></mat-card-subtitle>
+                <mat-card-subtitle>
+                  <i
+                    class="{{ item.icon }}"
+                    (click)="setActiveAccountSetting(i)"
+                  ></i
+                ></mat-card-subtitle>
               </div>
               <div class="col-md-11 col-11">
-                <mat-card-subtitle><p (click)="setActiveAccountSetting(i)">{{item.label}}</p></mat-card-subtitle>
+                <mat-card-subtitle
+                  ><p (click)="setActiveAccountSetting(i)">
+                    {{ item.label }}
+                  </p></mat-card-subtitle
+                >
               </div>
             </div>
           </li>

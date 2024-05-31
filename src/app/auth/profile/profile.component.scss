@@ -122,4 +122,21 @@
       color: #F84E45 !important;
     }
   }
+  .followers-following{
+    margin: 2px;
+    cursor: pointer;
+    mat-card-subtitle{
+      color: #F84E45 !important;
+    }
+    i{
+      color:rgb(255, 183, 0);
+      font-size: 21px;
+    }
+  }
+
+  .followers-following  :hover{
+
+    text-decoration: underline;
+
+  }
 }

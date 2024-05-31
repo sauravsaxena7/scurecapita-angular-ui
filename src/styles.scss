@@ -1,6 +1,5 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 @include mat.core();
-
 
 html {
   height: 100%;
@@ -12,7 +11,7 @@ body {
   margin: 0;
   color: var(--text-color-hard);
   font-weight: 400;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -20,7 +19,9 @@ body {
 *:after {
   box-sizing: inherit;
 }
-.mat-mdc-progress-spinner { --mdc-circular-progress-active-indicator-color: white; }
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: white;
+}
 
 /* Change the border focused color */
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
@@ -32,9 +33,6 @@ body {
   border-color: #878484 !important;
 }
 
-
-
-
 // $inside-primary: mat-palette($mat-light-blue);
 // $inside-accent: mat-palette($mat-light-blue);
 // $inside-warn: mat-palette($mat-red);
@@ -43,9 +41,9 @@ body {
 
 $custom-primary: mat.define-palette(mat.$red-palette, 500, 100, 900);
 
-
-
-$youtube-navbar-sidebar-primary-light-theme: mat.define-palette(mat.$indigo-palette);
+$youtube-navbar-sidebar-primary-light-theme: mat.define-palette(
+  mat.$indigo-palette
+);
 
 // Define a light theme
 $light-primary: mat.define-palette(mat.$indigo-palette);
@@ -56,7 +54,7 @@ $light-theme: mat.define-light-theme(
       primary: $custom-primary,
       //primary:$bv-palette-primary,
       accent: $light-accent,
-      light-nav:$youtube-navbar-sidebar-primary-light-theme
+      light-nav: $youtube-navbar-sidebar-primary-light-theme,
     ),
   )
 );
@@ -105,45 +103,39 @@ $dark-theme: mat.define-dark-theme(
   }
 }
 
-body{
-
-  &.color-scheme-dark{
+body {
+  &.color-scheme-dark {
     background-color: #3a3a3a;
     color: #f2f2f2;
-    .main-card{
+    .main-card {
       background-color: #393838;
     }
-    mat-sidenav{
+    mat-sidenav {
       background-color: #393838;
     }
-    mat-sidenav-content{
+    mat-sidenav-content {
       background-color: #3a3a3a;
     }
-    .form-control{
+    .form-control {
       border: 1px solid #464545;
       background-color: #3a3a3a;
     }
-    
-    
   }
 
-  &.color-scheme-light{
+  &.color-scheme-light {
     background-color: #f4f3ef;
-    .main-card{
+    .main-card {
       background-color: #f5f5f5;
     }
-    mat-sidenav{
+    mat-sidenav {
       background-color: #f5f5f5;
     }
-    mat-sidenav-content{
+    mat-sidenav-content {
       background-color: #f4f3ef;
     }
-    .form-control{
-      
+    .form-control {
     }
-    
   }
-
 }
 
 .main-div {
@@ -182,9 +174,13 @@ mat-label {
   span {
     color: red;
     cursor: pointer;
-    
   }
-  span:hover{
+  span:hover {
     text-decoration: underline;
   }
+}
+
+.flex-section {
+  display: flex;
+  flex-wrap: wrap;
 }
